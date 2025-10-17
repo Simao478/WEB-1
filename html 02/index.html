@@ -1,67 +1,125 @@
 <!DOCTYPE html>
+<!-- Define que o documento segue o padrão HTML5 -->
+
 <html lang="pt-br">
+<!-- Define o idioma da página como português do Brasil -->
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>html 02- listas,tabelas,formularios</title>
-</head>
-<body>
-    <h1>listas, tabelas, furmularios</h1>
-    <P>nesta pagina seram apresentadas listas, tabelas e formularios</P>
-    <h2>lista não ordenada</h2>
-    <ul>
-        <li>maçã</li>
-        <li>pêra</li>
-        <li>uva</li>
+    <!-- Define o padrão de caracteres (acentos e símbolos) como UTF-8 -->
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Faz com que a página se ajuste ao tamanho da tela (responsiva) -->
+
+    <title>HTML 02 - Listas, Tabelas e Formulários</title>
+    <!-- Título que aparece na aba do navegador -->
+</head>
+
+<body>
+    <!-- Início do corpo da página (conteúdo visível) -->
+
+    <h1>Listas, Tabelas e Formulários</h1>
+    <!-- Título principal da página -->
+
+    <p>Nesta página serão apresentadas listas, tabelas e formulários.</p>
+    <!-- Parágrafo introdutório explicando o conteúdo da página -->
+
+    <h2>Lista não ordenada</h2>
+    <!-- Subtítulo da seção de lista não ordenada -->
+
+    <ul>
+        <!-- Lista não ordenada (com marcadores) -->
+        <li>Maçã</li>
+        <li>Pêra</li>
+        <li>Uva</li>
     </ul>
-    <H2>lista ordenada</H2>
+
+    <h2>Lista ordenada</h2>
+    <!-- Subtítulo da seção de lista ordenada -->
+
     <ol>
-        <li>cabeça</li>
-        <li>ombro</li>
-        <li>joelho</li>
-        <li>pé</li>
+        <!-- Lista ordenada (numerada) -->
+        <li>Cabeça</li>
+        <li>Ombro</li>
+        <li>Joelho</li>
+        <li>Pé</li>
     </ol>
-    <H2>lista de definição</H2>
+
+    <h2>Lista de definição</h2>
+    <!-- Subtítulo da seção de lista de definição -->
+
     <dl>
+        <!-- Lista de termos e definições -->
         <dt>HTML</dt>
-        <dd>linguagem de marcação</dd>
+        <dd>Linguagem de marcação</dd>
+
         <dt>CSS</dt>
-        <dd>folha de estilo</dd>
-        <dt>java script</dt>
-        <dd>Linguagem de programção- interação</dd>
+        <dd>Folha de estilo</dd>
+
+        <dt>JavaScript</dt>
+        <dd>Linguagem de programação - interação</dd>
     </dl>
+
     <hr>
-    <H2>tabela</H2>
-    <table border="1" >
+    <!-- Linha horizontal separando as seções -->
+
+    <h2>Tabela</h2>
+    <!-- Subtítulo da seção de tabela -->
+
+    <table border="1">
+        <!-- Criação da tabela com borda -->
+
         <tr>
-            <th>tecnologia</th>
-            <th>descrição</th>
+            <!-- Linha de cabeçalho -->
+            <th>Tecnologia</th>
+            <th>Descrição</th>
         </tr>
+
         <tr>
-            <td>HYML</td>
+            <!-- Primeira linha de dados -->
+            <td>HTML</td>
             <td>Linguagem de marcação</td>
         </tr>
+
         <tr>
-            <td>Java script</td>
-            <td>linguagem de programação- interação</td>
+            <!-- Segunda linha de dados -->
+            <td>JavaScript</td>
+            <td>Linguagem de programação - interação</td>
         </tr>
     </table>
+
     <hr>
-    <h2>formularios</h2>
+    <!-- Linha horizontal separando seções -->
+
+    <h2>Formulários</h2>
+    <!-- Subtítulo da seção de formulários -->
+
     <form action="#" method="post">
-        <label form="nome">Nome:</label><br>
-        <input typr="text" id="name" nome="nome"><br><br>
+        <!-- Início do formulário.
+             action="#" significa que ele não enviará os dados para outro arquivo.
+             method="post" indica o tipo de envio dos dados. -->
 
-        <label form="nome">email:</label><br>
-        <input typr="email" id="email" nome="email"><br><br>
+        <label for="nome">Nome:</label><br>
+        <!-- Rótulo do campo de nome -->
+        <input type="text" id="nome" name="nome"><br><br>
+        <!-- Campo de texto para o nome do usuário -->
 
-        <label form="senha">Nome:</label><br>
-        <input typr="password" id="senha" nome="senha"><br><br>
+        <label for="email">E-mail:</label><br>
+        <!-- Rótulo do campo de e-mail -->
+        <input type="email" id="email" name="email"><br><br>
+        <!-- Campo para digitar o e-mail -->
 
-        <input typr="submit" value="enviar">
+        <label for="senha">Senha:</label><br>
+        <!-- Rótulo do campo de senha -->
+        <input type="password" id="senha" name="senha"><br><br>
+        <!-- Campo de senha (oculta os caracteres digitados) -->
+
+        <input type="submit" value="Enviar">
+        <!-- Botão de envio do formulário -->
     </form>
 
-
 </body>
+<!-- Fim do corpo da página -->
+
 </html>
+<!-- Fim do documento HTML -->
