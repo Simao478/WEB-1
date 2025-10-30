@@ -1,0 +1,192 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cor-fundo: #1f2735;
+  --cor-card: #101826;
+  --cor-texto: #e6eef6;
+  --cor-acento: rgb(255, 110, 95);
+  --cor-secundaria: #9aa4b2;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.banner {
+  background-color: #1b2333;
+  background-size: cover;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.titulo {
+  color: var(--cor-acento);
+  font-size: 2.4rem;
+}
+
+.subtitulo {
+  font-style: italic;
+  color: var(--cor-secundaria);
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.destaque {
+  margin: 30px 0;
+}
+
+.destaque-card {
+  display: flex;
+  gap: 16px;
+  background: var(--cor-card);
+  padding: 18px;
+  border-radius: 10px;
+}
+
+.poster.grande {
+  width: 240px;
+  border-radius: 8px;
+}
+
+.filme-titulo {
+  color: var(--cor-acento);
+  font-size: 1.5rem;
+}
+
+.generos {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.generos li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+.catalogo {
+  margin: 30px 0;
+}
+
+.grid-filmes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.card.filme {
+  width: calc(33.333% - 10px);
+  background: var(--cor-card);
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.card.filme h4 {
+  color: var(--cor-acento);
+  margin-top: 8px;
+}
+
+.card.filme a {
+  color: var(--cor-texto);
+  text-decoration: none;
+}
+
+.card.filme a:hover {
+  text-decoration: underline;
+}
+
+.meta {
+  color: var(--cor-secundaria);
+  font-size: 0.9rem;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.tabela th, .tabela td {
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tabela thead th {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.tabela tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.lista-generos {
+  margin-top: 10px;
+  list-style-type: circle;
+}
+
+.sobre {
+  margin: 30px 0;
+}
+
+.avatar {
+  width: 120px;
+  float: right;
+  margin-left: 14px;
+  border-radius: 8px;
+}
+
+.rodape {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+  color: var(--cor-secundaria);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 900px) {
+  .card.filme {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 600px) {
+  .card.filme {
+    width: 100%;
+  }
+  .menu ul {
+    flex-wrap: wrap;
+  }
+}
