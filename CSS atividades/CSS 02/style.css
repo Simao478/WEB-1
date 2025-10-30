@@ -7,7 +7,19 @@
 }
 
 .lista3 {
-  list-style-image: url("marcador.png"); /* marcador com imagem */
+  list-style: none;
+  padding-left: 1.5em;
+}
+
+.lista3 li::before {
+  content: "";
+  display: inline-block;
+  width: 12px; /* tamanho desejado */
+  height: 12px;
+  background-image: url("marcador.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 8px;
 }
 
 .tabela{
