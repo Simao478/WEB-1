@@ -1,0 +1,157 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Inter', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #12054d;
+}
+
+/* FUNDO DE MINI ESTRELAS ANIMADO COM PNG */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image: url('estrela.png'); /* estrela PNG */
+  background-repeat: repeat;
+  background-size: 20px 20px; /* tamanho das mini estrelas */
+  opacity: 0.15;
+  z-index: -1;
+  animation: moveStars 60s linear infinite;
+}
+
+/* Segunda camada para profundidade */
+body::after {
+  background-size: 25px 25px; /* estrelas ligeiramente maiores */
+  opacity: 0.08;
+  animation-duration: 120s; /* mais lenta que a primeira camada */
+}
+
+/* Animação */
+@keyframes moveStars {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+
+/* CONTAINER */
+.container {
+  background-color: #1f1f3f;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 450px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+/* TITULO */
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #ffd60a;
+  text-shadow: 1px 1px 5px #000;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  color: #ddd;
+}
+
+/* INPUT */
+input[type="number"] {
+  width: 65%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid #ffd60a;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+  transition: 0.3s;
+  background-color: #2b2b4f;
+  color: #fff;
+}
+
+input[type="number"]::placeholder {
+  color: #aaa;
+}
+
+input[type="number"]:focus {
+  border-color: #ff9f1c;
+  box-shadow: 0 0 10px #ff9f1c;
+}
+
+/* BOTÕES - mais espaçados e abaixo do input */
+.botoes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px; /* aumento do espaço entre input e botões */
+  margin-bottom: 25px;
+}
+
+button {
+  background-color: #ff9f1c;
+  color: #12054d;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ffd60a;
+  transform: translateY(-2px);
+}
+
+.hidden {
+  display: none;
+}
+
+/* MENSAGENS */
+.mensagem {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  min-height: 25px;
+}
+
+.mensagem.success {
+  color: #00ff94;
+  font-weight: bold;
+}
+
+.mensagem.error {
+  color: #ff4c4c;
+  font-weight: bold;
+}
+
+/* CHANCES */
+.chances {
+  font-size: 1rem;
+  color: #ccc;
+}
