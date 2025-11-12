@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adivinhe a Palavra!</title>
+  <link rel="stylesheet" href="css/style-tela-inicial.css">
+  <style>
+    /* Letras animadas no fundo */
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #12054d;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+    }
+    .letra {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.3;
+      animation: flutuar 8s infinite linear;
+    }
+    @keyframes flutuar {
+      from { transform: translateY(100vh) rotate(0deg); }
+      to { transform: translateY(-10vh) rotate(360deg); }
+    }
+    .container {
+      position: relative;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+    h1 {
+      color: #fff;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #ffcc00;
+      border: none;
+      border-radius: 10px;
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #ffd633;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎯 Adivinhe a Palavra!</h1>
+    <button id="btnJogar">Jogar</button>
+    <button id="btnComoJogar">Como Jogar</button>
+  </div>
+
+  <script>
+    // === Letras animadas ===
+    const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    for (let i = 0; i < 25; i++) {
+      const span = document.createElement("span");
+      span.classList.add("letra");
+      span.textContent = letras[Math.floor(Math.random() * letras.length)];
+      span.style.left = Math.random() * 100 + "vw";
+      span.style.animationDelay = Math.random() * 5 + "s";
+      span.style.animationDuration = 6 + Math.random() * 5 + "s";
+      span.style.color = `hsl(${Math.random() * 360}, 70%, 80%)`;
+      document.body.appendChild(span);
+    }
+
+    // === Ações dos botões ===
+    document.getElementById("btnJogar").addEventListener("click", () => {
+      window.location.href = "tela-modos.html";
+    });
+
+    document.getElementById("btnComoJogar").addEventListener("click", () => {
+      alert("💡 Dica: Escolha um modo, chute letras e descubra a palavra! Cada acerto aparece em azul, e erros em vermelho.");
+    });
+  </script>
+</body>
+</html>
