@@ -1,0 +1,96 @@
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === BODY === */
+body {
+  height: 100vh;
+  font-family: 'Comic Sans MS', 'Poppins', sans-serif;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #7eb6ff, #e2f3ff);
+  position: relative;
+}
+
+/* === LETRAS FLUTUANTES === */
+.letra {
+  position: absolute;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.7);
+  user-select: none;
+  animation: flutuar 8s linear infinite;
+}
+
+@keyframes flutuar {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* === CONTAINER CENTRAL === */
+.container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+}
+
+h1 {
+  font-size: 3rem;
+  text-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+  color: #ffda79;
+  margin-bottom: 40px;
+}
+
+/* === BOTÕES === */
+.botoes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+button {
+  background-color: #ff8fab;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.3rem;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff5c8d;
+  transform: scale(1.05);
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  button {
+    font-size: 1rem;
+    padding: 12px 30px;
+  }
+}
