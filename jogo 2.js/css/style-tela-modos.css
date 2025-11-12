@@ -1,0 +1,123 @@
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === BODY === */
+body {
+  height: 100vh;
+  font-family: 'Comic Sans MS', 'Poppins', sans-serif;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #7eb6ff, #e2f3ff);
+  position: relative;
+}
+
+/* === LETRAS FLUTUANTES === */
+.letra {
+  position: absolute;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.6);
+  user-select: none;
+  animation: flutuar 8s linear infinite;
+}
+
+@keyframes flutuar {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* === CONTAINER === */
+.container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+}
+
+h1 {
+  font-size: 2.6rem;
+  color: #ffe66d;
+  text-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+  margin-bottom: 40px;
+}
+
+/* === BOTÕES DE MODO === */
+.modos {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.modo {
+  width: 220px;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1.4rem;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: 0.3s ease;
+}
+
+.modo:hover {
+  transform: scale(1.08);
+}
+
+/* Cores específicas de cada modo */
+.frutas {
+  background-color: #ff8fab;
+}
+
+.paises {
+  background-color: #6dd5ed;
+}
+
+.animais {
+  background-color: #a3de83;
+}
+
+/* Botão voltar */
+.voltar {
+  margin-top: 50px;
+  background-color: #ffc75f;
+  color: #fff;
+  border: none;
+  font-size: 1.1rem;
+  padding: 10px 25px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.voltar:hover {
+  background-color: #ffb347;
+  transform: scale(1.05);
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .modo {
+    width: 180px;
+    font-size: 1.1rem;
+  }
+}
