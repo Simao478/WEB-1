@@ -23,5 +23,5 @@ btnJogar.addEventListener("click", () => {
 
 
 btnComoJogar.addEventListener("click", () => {
-  alert("🧩 Como Jogar:\nDescubra a palavra escondida!\nDigite as letras certas para vencer!");
+  alert("💡 Dica: Escolha um modo, chute letras e descubra a palavra! Cada acerto aparece em azul, e erros em vermelho.");
 });
