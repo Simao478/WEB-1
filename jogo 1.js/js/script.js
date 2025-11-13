@@ -1,7 +1,11 @@
-// Sorteia um número secreto da lista numerosPossiveis
+// === LISTA DE NÚMEROS POSSÍVEIS (1 a 100) ===
+const numerosPossiveis = Array.from({ length: 100 }, (_, i) => i + 1);
+
+// === VARIÁVEIS INICIAIS ===
 let numeroSecreto = numerosPossiveis[Math.floor(Math.random() * numerosPossiveis.length)];
 let chances = 3;
 
+// === ELEMENTOS DA INTERFACE ===
 const chuteInput = document.getElementById("chute");
 const btnChutar = document.getElementById("btnChutar");
 const btnDica = document.getElementById("btnDica");
@@ -9,9 +13,9 @@ const btnNovo = document.getElementById("btnNovo");
 const mensagem = document.getElementById("mensagem");
 const contador = document.getElementById("contador");
 
-// Função ao clicar em "Chutar"
+// === AÇÃO: CHUTAR ===
 btnChutar.addEventListener("click", () => {
-  let chute = Number(chuteInput.value);
+  const chute = Number(chuteInput.value);
 
   if (!chute || chute < 1 || chute > 100) {
     mensagem.textContent = "Digite um número entre 1 e 100!";
@@ -20,17 +24,19 @@ btnChutar.addEventListener("click", () => {
   }
 
   if (chute === numeroSecreto) {
-    mensagem.textContent = "Parabéns! Você acertou!";
+    mensagem.textContent = "🎉 Parabéns! Você acertou!";
     mensagem.className = "mensagem success";
     finalizarJogo();
   } else {
     chances--;
     if (chances === 0) {
-      mensagem.textContent = `Perdeu! O número era ${numeroSecreto}`;
+      mensagem.textContent = `💥 Que pena! O número era ${numeroSecreto}.`;
       mensagem.className = "mensagem error";
       finalizarJogo();
     } else {
-      mensagem.textContent = chute < numeroSecreto ? "Tente um número maior!" : "Tente um número menor!";
+      mensagem.textContent = chute < numeroSecreto
+        ? "📈 Tente um número maior!"
+        : "📉 Tente um número menor!";
       mensagem.className = "mensagem error";
       contador.textContent = chances;
     }
@@ -39,16 +45,16 @@ btnChutar.addEventListener("click", () => {
   chuteInput.value = "";
 });
 
-// Função ao clicar em "Dica"
+// === AÇÃO: DICA ===
 btnDica.addEventListener("click", () => {
-  const faixa = 10; 
-  let min = Math.max(1, numeroSecreto - faixa);
-  let max = Math.min(100, numeroSecreto + faixa);
-  mensagem.textContent = `Dica: O número está entre ${min} e ${max}`;
+  const faixa = 10;
+  const min = Math.max(1, numeroSecreto - faixa);
+  const max = Math.min(100, numeroSecreto + faixa);
+  mensagem.textContent = `💡 Dica: O número está entre ${min} e ${max}.`;
   mensagem.className = "mensagem";
 });
 
-// Função para finalizar o jogo
+// === FUNÇÃO: FINALIZAR JOGO ===
 function finalizarJogo() {
   chuteInput.disabled = true;
   btnChutar.disabled = true;
@@ -56,7 +62,7 @@ function finalizarJogo() {
   btnNovo.classList.remove("hidden");
 }
 
-// Botão "Tentar de novo"
+// === AÇÃO: NOVO JOGO ===
 btnNovo.addEventListener("click", () => {
   numeroSecreto = numerosPossiveis[Math.floor(Math.random() * numerosPossiveis.length)];
   chances = 3;
